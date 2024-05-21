@@ -35,7 +35,15 @@ export default function NavMenu({ user }: { user: User }) {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/friends">
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Friends
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
         </NavigationMenuList>
+
         <NavigationMenuList className="flex gap-2">
           <NavigationMenuItem>
             <ThemeToggle />

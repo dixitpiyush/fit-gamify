@@ -8,13 +8,24 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { getAwards } from "@/db/actions";
+import { getAwards, getUserWithUserId, hasBefriended } from "@/db/actions";
+import { auth } from "@/auth";
+import { FriendButton } from "./friend-button";
 
 export default async function UserProfile({
   user,
 }: {
   user: typeof users.$inferSelect;
 }) {
+  const session = await auth();
+  const currUser = session?.user?.id
+    ? await getUserWithUserId(session.user.id)
+    : undefined;
+
+  const ownProfile = currUser?.id === user.id;
+
+  const isFriend = currUser ? await hasBefriended(currUser, user) : false;
+
   const userAwards = await getAwards(user);
   return (
     <main className="mx-12 my-12 mb-20 flex h-full flex-row items-center rounded-2xl border-2">
@@ -29,7 +40,16 @@ export default async function UserProfile({
         <div className="m-2 text-lg font-thin text-muted-foreground">
           {user.email}
         </div>
-        <ShareProfile emailId={user.email} />
+        <div className="flex flex-row space-x-2 p-2">
+          <ShareProfile emailId={user.email} />
+          {!ownProfile && (
+            <FriendButton
+              currUser={currUser}
+              friendUser={user}
+              alreadyFriend={isFriend}
+            />
+          )}
+        </div>
       </div>
       <Separator
         orientation="vertical"
