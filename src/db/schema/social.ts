@@ -21,3 +21,11 @@ export const friends = sqliteTable("friends", {
     .notNull()
     .references(() => users.id),
 });
+
+export const groups = sqliteTable("groups", {
+  userId: text("userId")
+    .notNull()
+    .references(() => users.id)
+    .primaryKey(),
+  groupId: text("groupId").notNull(),
+});

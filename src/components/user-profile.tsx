@@ -8,9 +8,17 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { getAwards, getUserWithUserId, hasBefriended } from "@/db/actions";
+import {
+  getAwards,
+  getGroupIdWithUser,
+  getUserWithUserId,
+  hasBefriended,
+} from "@/db/actions";
 import { auth } from "@/auth";
 import { FriendButton } from "./friend-button";
+import Link from "next/link";
+import { Handshake } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default async function UserProfile({
   user,
@@ -25,6 +33,8 @@ export default async function UserProfile({
   const ownProfile = currUser?.id === user.id;
 
   const isFriend = currUser ? await hasBefriended(currUser, user) : false;
+
+  const group = await getGroupIdWithUser(user);
 
   const userAwards = await getAwards(user);
   return (
@@ -48,6 +58,13 @@ export default async function UserProfile({
               friendUser={user}
               alreadyFriend={isFriend}
             />
+          )}
+          {group && (
+            <Button variant={"outline"}>
+              <Link href={`/group/${group.groupId}`}>
+                <Handshake />
+              </Link>
+            </Button>
           )}
         </div>
       </div>

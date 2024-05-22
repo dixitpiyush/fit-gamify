@@ -32,7 +32,7 @@ export function FriendButton({
   }
   return (
     <Button
-      variant={"ghost"}
+      variant={"outline"}
       onClick={async () => {
         if (!isFriend) {
           await addFriend(currUser, friendUser);

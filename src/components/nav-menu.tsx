@@ -42,6 +42,13 @@ export default function NavMenu({ user }: { user: User }) {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/group">
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Group
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
         </NavigationMenuList>
 
         <NavigationMenuList className="flex gap-2">

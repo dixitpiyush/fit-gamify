@@ -8,7 +8,7 @@ export default async function ExercisesPage() {
   const session = await auth();
 
   if (!session?.user) {
-    redirect("/");
+    return redirect("/");
   }
 
   const user = await getUserWithEmail(session.user.email!);
