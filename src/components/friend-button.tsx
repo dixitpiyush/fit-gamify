@@ -2,7 +2,7 @@
 
 import { users } from "@/db/schema/users";
 import { Button } from "./ui/button";
-import { Heart } from "lucide-react";
+import { FaHandHoldingHeart } from "react-icons/fa";
 import { addFriend, removeFriend } from "@/db/actions";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { useState } from "react";
@@ -22,7 +22,7 @@ export function FriendButton({
     return (
       <HoverCard>
         <HoverCardTrigger>
-          <Heart />
+          <FaHandHoldingHeart />
         </HoverCardTrigger>
         <HoverCardContent>
           You must be logged in to friend someone
@@ -43,9 +43,7 @@ export function FriendButton({
         }
       }}
     >
-      <Heart
-        className={`${isFriend ? `fill-current text-pink-500` : `text-white`}`}
-      />
+      <FaHandHoldingHeart className={`${isFriend ? `fill-current text-pink-500` : `text-white`}`} />
     </Button>
   );
 }

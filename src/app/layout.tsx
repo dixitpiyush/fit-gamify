@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { PT_Serif } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/components/theme-provider";
 
-const fontSans = FontSans({
+const fontPtSerif = PT_Serif({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-serif",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -24,8 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "box-border flex h-screen flex-col bg-background font-sans antialiased",
-          fontSans.variable
+          "box-border flex h-screen flex-col bg-background antialiased",
+          fontPtSerif.className,
+          fontPtSerif.style.fontFamily,
+          fontPtSerif.style.fontWeight,
+          fontPtSerif.style.fontWeight
         )}
       >
         <ThemeProvider

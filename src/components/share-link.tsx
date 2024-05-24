@@ -1,6 +1,5 @@
 "use client";
 
-import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import { Button } from "./ui/button";
 import {
   AlertDialog,
@@ -12,6 +11,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { FaShareSquare } from "react-icons/fa";
 
 export default function ShareProfile({ emailId }: { emailId: string }) {
   return (
@@ -26,7 +26,7 @@ export default function ShareProfile({ emailId }: { emailId: string }) {
               );
             }}
           >
-            <Icon icon="material-symbols:share" />
+            <FaShareSquare className="text-blue-400" />
           </Button>
         </AlertDialogTrigger>
         <AlertDialogContent>

@@ -1,6 +1,9 @@
 import { users } from "@/db/schema/users";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Icon } from "@iconify-icon/react/dist/iconify.js";
+import { GiLaurelsTrophy } from "react-icons/gi";
+import { RiMedal2Line } from "react-icons/ri";
+import { PiCertificateFill } from "react-icons/pi";
+import { FaGripfire } from "react-icons/fa";
 import { Separator } from "./ui/separator";
 import ShareProfile from "./share-link";
 import {
@@ -17,7 +20,7 @@ import {
 import { auth } from "@/auth";
 import { FriendButton } from "./friend-button";
 import Link from "next/link";
-import { Handshake } from "lucide-react";
+import { HiMiniUserGroup } from "react-icons/hi2";
 import { Button } from "./ui/button";
 
 export default async function UserProfile({
@@ -62,7 +65,7 @@ export default async function UserProfile({
           {group && (
             <Button variant={"outline"}>
               <Link href={`/group/${group.groupId}`}>
-                <Handshake />
+                <HiMiniUserGroup className="text-blue-700" />
               </Link>
             </Button>
           )}
@@ -76,10 +79,7 @@ export default async function UserProfile({
         <HoverCard>
           <HoverCardTrigger>
             <div className="flex h-1/4 flex-row items-center justify-center gap-4 align-middle">
-              <Icon
-                icon="solar:cup-first-linear"
-                height="5rem"
-              />
+              <GiLaurelsTrophy className="size-20 text-yellow-600" />
               <span className="text-4xl">× {userAwards.gold}</span>
             </div>
           </HoverCardTrigger>
@@ -100,10 +100,7 @@ export default async function UserProfile({
         <HoverCard>
           <HoverCardTrigger>
             <div className="flex h-1/4 flex-row items-center justify-center gap-4 align-middle">
-              <Icon
-                icon="fa6-solid:medal"
-                height="5rem"
-              />
+              <RiMedal2Line className="size-20 text-gray-400" />
               <span className="text-4xl">× {userAwards.silver}</span>
             </div>
           </HoverCardTrigger>
@@ -121,10 +118,7 @@ export default async function UserProfile({
         <HoverCard>
           <HoverCardTrigger>
             <div className="flex h-1/4 flex-row items-center justify-center gap-4 align-middle">
-              <Icon
-                icon="ph:medal-fill"
-                height="5rem"
-              />
+              <PiCertificateFill className="size-20 text-red-900" />
               <span className="text-4xl">× {userAwards.bronze}</span>
             </div>
           </HoverCardTrigger>
@@ -142,10 +136,7 @@ export default async function UserProfile({
         <HoverCard>
           <HoverCardTrigger>
             <div className="flex h-1/4 flex-row items-center justify-center gap-4 align-middle">
-              <Icon
-                icon="mdi:fire"
-                height="5rem"
-              />
+              <FaGripfire className="size-20 text-primary " />
               <span className="text-4xl">× {userAwards.streak}</span>
             </div>
           </HoverCardTrigger>

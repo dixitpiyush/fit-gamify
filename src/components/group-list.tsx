@@ -1,4 +1,3 @@
-import { User } from "lucide-react";
 import { FriendButton } from "./friend-button";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
@@ -16,6 +15,7 @@ import { redirect } from "next/navigation";
 import { GroupInviteButton } from "./group-invite-button";
 import ShareGroup from "./share-group-link";
 import Link from "next/link";
+import { FaUserAstronaut } from "react-icons/fa6";
 
 export async function GroupList({
   user,
@@ -82,7 +82,7 @@ export async function GroupList({
                       <Avatar className="size-24">
                         <AvatarImage src={conUser.image!} />
                         <AvatarFallback>
-                          <User />
+                          <FaUserAstronaut className="text-accent" />
                         </AvatarFallback>
                       </Avatar>
                       <span className="py-1 text-lg font-semibold">

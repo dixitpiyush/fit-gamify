@@ -2,7 +2,7 @@
 
 import { groups } from "@/db/schema/social";
 import { Button } from "./ui/button";
-import { ClipboardCopy } from "lucide-react";
+import { LuClipboardSignature } from "react-icons/lu";
 
 export function GroupInviteButton({
   groupId,
@@ -22,7 +22,7 @@ export function GroupInviteButton({
       >
         {link}
       </Button>
-      <ClipboardCopy />
+      <LuClipboardSignature />
     </div>
   );
 }

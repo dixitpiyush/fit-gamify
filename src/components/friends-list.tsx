@@ -1,6 +1,6 @@
 import { getFriends, getUserWithUserId } from "@/db/actions";
 import { users } from "@/db/schema/users";
-import { User } from "lucide-react";
+import { FaUserAstronaut } from "react-icons/fa6";
 import { FriendButton } from "./friend-button";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
@@ -44,7 +44,7 @@ export async function FriendsList({
               <Avatar className="size-24">
                 <AvatarImage src={friendObj.image!} />
                 <AvatarFallback>
-                  <User />
+                  <FaUserAstronaut className="text-accent" />
                 </AvatarFallback>
               </Avatar>
               <span className="py-1 text-lg font-semibold">

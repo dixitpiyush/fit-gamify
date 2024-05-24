@@ -1,6 +1,5 @@
 "use client";
 
-import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import { Button } from "./ui/button";
 import {
   AlertDialog,
@@ -13,6 +12,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { groups } from "@/db/schema/social";
+import { FaShareSquare } from "react-icons/fa";
 
 export default function ShareGroup({
   groupId,
@@ -31,7 +31,7 @@ export default function ShareGroup({
               );
             }}
           >
-            <Icon icon="material-symbols:share" />
+            <FaShareSquare className="text-blue-400" />
           </Button>
         </AlertDialogTrigger>
         <AlertDialogContent>

@@ -2,8 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { Icon } from "@iconify-icon/react";
 import { signInUser } from "@/db/user-auth";
+import { FaGithub } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 
 export default function UserAuth({
   className,
@@ -20,11 +21,7 @@ export default function UserAuth({
           await signInUser("github");
         }}
       >
-        <Icon
-          icon="mdi:github"
-          className="mr-2"
-          width="18"
-        />
+        <FaGithub className="mr-2 size-5" />
         Github
       </Button>
       <Button
@@ -33,11 +30,7 @@ export default function UserAuth({
           await signInUser("google");
         }}
       >
-        <Icon
-          icon="ri:google-fill"
-          className="mr-2"
-          width="18"
-        />
+        <FaGoogle className="mr-2 size-5" />
         Google
       </Button>
     </div>
