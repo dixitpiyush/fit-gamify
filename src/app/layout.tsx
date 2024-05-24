@@ -10,7 +10,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "FitGamify",
+  title: "MoveMasters",
   description:
     "A website which aims to combine the world of Fitness with the world of Gaming",
 };

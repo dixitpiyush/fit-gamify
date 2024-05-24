@@ -5,7 +5,7 @@ export default function Home() {
     <main className="flex h-full w-screen flex-row items-stretch justify-normal">
       <div className="hidden flex-1 flex-col p-4 md:flex md:dark:bg-muted">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          FitGamify
+          MoveMasters
         </h1>
         <div className="flex basis-full flex-col items-center justify-center">
           <p className="text-xl italic text-muted-foreground">

@@ -7,7 +7,7 @@ export default function SettingsPage() {
         Settings
       </h1>
       <p className="italic leading-7 [&:not(:first-child)]:mt-6">
-        Customize your FitGamify experience
+        Customize your MoveMasters experience
       </p>
 
       <h2 className="mt-16 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
